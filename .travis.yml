@@ -1,14 +1,18 @@
 # Travis Continuos Integration
 # Currently only tests notebook files
 # Based on https://conda.pydata.org/docs/travis.html
-sudo: false # use container based build
+dist: xenial
 language: python
-dist: focal
+
 notifications:
   email: false
 
-python:
-  - "3.7"
+jobs:
+  include:
+    - env: NAME="Latest Everything."
+      python: 3.9
+    - env: NAME="Oldest Version."
+      python: 3.6
 
 before_install:
   - |
@@ -37,6 +41,3 @@ install:
 
 script:
   - ci/run-linter.sh
-  - pushd docs
-  - make html
-  - popd

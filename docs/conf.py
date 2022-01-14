@@ -213,7 +213,7 @@ napoleon_include_init_with_doc = False  # move init doc to 'class' doc
 napoleon_preprocess_types = True
 napoleon_type_aliases = {
     # Python or inherited terms
-    # NOTE: float, int, and str are automatically included
+    # NOTE: built-in types are automatically included
     'callable': ':py:func:`callable`',
     'sequence': ':term:`sequence`',
     'dict-like': ':term:`dict-like <mapping>`',
